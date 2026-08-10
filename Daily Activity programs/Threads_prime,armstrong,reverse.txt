@@ -1,0 +1,49 @@
+class Main extends Thread{
+    public void run(){
+        if(getName().equals("Prime")){
+            int n=5,count=0;
+            for(int i=1;i<=n;i++){
+                if(n%i==0)
+                    count++;
+                
+            }
+            if(count==2)
+                    System.out.println("Prime");
+                else
+                    System.out.println("Not");
+            
+        }
+        if(getName().equals("Armstrong")){
+            int num = 153,rev=0,n=num;
+            while(num>0){
+                int digit = num %10;
+                rev+=digit*digit*digit;
+                num/=10;
+            }
+            if(rev==n) 
+                System.out.println("Armstrong");
+            else 
+                System.out.println("Not armstrong");
+        }
+        if(getName().equals("Reverse")){
+            int a=459,revv =0;
+            while(a>0){
+                int dig = a%10;
+                revv=(revv*10)+dig;
+                a/=10;
+            }
+            System.out.println(revv);
+        }
+    }
+    public static void main(String[] args){
+        Main t1=new Main();
+        Main t2 = new Main();
+        Main t3 = new Main();
+        t1.setName("Prime");
+        t2.setName("Armstrong");
+        t3.setName("Reverse");
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
