@@ -11,7 +11,7 @@ public class Calculator extends Applet implements ActionListener {
         t1 = new TextField(10);
         t2 = new TextField(10);
         result = new TextField(10);
-
+ 
         add = new Button("Add");
         sub = new Button("Sub");
         mul = new Button("Mul");
